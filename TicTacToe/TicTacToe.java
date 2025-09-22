@@ -1,9 +1,9 @@
-// File: TicTacToe.java
 import java.util.Scanner;
 
 public class TicTacToe {
     private static char[][] board = new char[3][3];
     private static char currentPlayer = 'X';
+    private static Scanner scanner = new Scanner(System.in); // Declare Scanner as a static field
 
     public static void main(String[] args) {
         initializeBoard();
@@ -21,6 +21,7 @@ public class TicTacToe {
             }
             switchPlayer();
         }
+        scanner.close(); // Close the scanner when done
     }
 
     private static void initializeBoard() {
@@ -43,7 +44,6 @@ public class TicTacToe {
     }
 
     private static void playerMove() {
-        Scanner scanner = new Scanner(System.in);
         int row, col;
         while (true) {
             System.out.println("Player " + currentPlayer + ", enter your move (row and column): ");
