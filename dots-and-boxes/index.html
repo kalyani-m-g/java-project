@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dots and Boxes</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dots and Boxes Game</h1>
+  <canvas id="gameCanvas" width="500" height="500"></canvas>
+  <p>Current Player: <span id="currentPlayer">1</span></p>
+
+  <script>
+    // JavaScript game code here
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const rows = 4;
+    const cols = 4;
+    const spacing = 100;
+    const dotRadius = 5;
+
+    let hLines = Array(rows + 1).fill().map(() => Array(cols).fill(0));
+    let vLines = Array(rows).fill().map(() => Array(cols + 1).fill(0));
+    let boxes = Array(rows).fill().map(() => Array(cols).fill(0));
+    let currentPlayer = 1;
+
+    function drawBoard() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i <= rows; i++) {
+        for (let j = 0; j <= cols; j++) {
+          ctx.beginPath();
+          ctx.arc(j * spacing, i * spacing, dotRadius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // Add line drawing and box rendering here
+    }
+
+    drawBoard();
+  </script>
+</body>
+</html>
