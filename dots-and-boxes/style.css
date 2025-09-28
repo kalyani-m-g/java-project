@@ -1,27 +1,38 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f0f0f0;
-  margin: 0;
   padding: 20px;
-  user-select: none; /* prevent text selection while clicking */
+  background: #f0f0f0;
 }
 
-h1 {
-  color: #333;
+#game {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-gap: 10px;
+  justify-content: center;
 }
 
-canvas {
-  border: 2px solid #333;
-  background-color: #fff;
+.card {
+  width: 80px;
+  height: 100px;
+  background-color: #333;
+  color: white;
+  font-size: 50px;
+  line-height: 100px;
   cursor: pointer;
-  margin-top: 20px;
+  user-select: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-#currentPlayer {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #007acc;
-  margin-top: 10px;
+.card.face-up {
+  background-color: #06c;
 }
+
+.card.matched {
+  background-color: #0c6;
+  cursor: default;
+}
+
 
